@@ -39,7 +39,7 @@ export const BentoWidget = ({
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.4 }}
             className={clsx(
-                "row-span-1 rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-6 dark:bg-black dark:border-white/[0.2] bg-white border border-slate-100 border-transparent justify-between flex flex-col space-y-4 hover:border-slate-200",
+                "row-span-1 rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 md:p-6 dark:bg-black dark:border-white/[0.2] bg-white border border-slate-100 border-transparent justify-between flex flex-col space-y-4 hover:border-slate-200",
                 colSpan === 2 ? "md:col-span-2" : "md:col-span-1",
                 colSpan === 3 ? "md:col-span-3" : "",
                 className

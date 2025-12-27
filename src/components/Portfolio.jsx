@@ -113,7 +113,7 @@ const Portfolio = () => {
                                     </span>
                                     Open to Work
                                 </div>
-                                <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                                <h1 className="text-4xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
                                     I build scalable <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">enterprise ecosystems.</span>
                                 </h1>
                                 <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
@@ -124,14 +124,14 @@ const Portfolio = () => {
                             <div className="flex flex-wrap gap-4">
                                 <a
                                     href="mailto:ghosharabinda919@gmail.com"
-                                    className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2"
+                                    className="px-6 py-3 md:px-8 md:py-4 bg-slate-900 text-white rounded-2xl font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2"
                                 >
                                     Book a Strategy Call
                                     <ArrowUpRight size={20} className="text-slate-400" />
                                 </a>
                                 <button
                                     onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-2xl font-semibold text-lg hover:bg-slate-50 transition-all flex items-center gap-2"
+                                    className="px-6 py-3 md:px-8 md:py-4 bg-white border border-slate-200 text-slate-700 rounded-2xl font-semibold text-lg hover:bg-slate-50 transition-all flex items-center gap-2"
                                 >
                                     View Case Studies
                                 </button>
@@ -168,7 +168,7 @@ const Portfolio = () => {
                                     <div className="text-slate-400 text-xs uppercase tracking-wider font-bold">Current Focus</div>
                                     <div className="text-lg font-semibold text-white">{NOW_DATA.currentFocus}</div>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <div className="text-slate-500 text-[10px] uppercase font-bold">Learning</div>
                                         <div className="text-sm text-slate-300">{NOW_DATA.learning}</div>
@@ -226,14 +226,14 @@ const Portfolio = () => {
                     <h2 className="text-2xl font-bold text-slate-900 mb-8 px-2">Technical Arsenal</h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {SKILLS_DATA.salesforce.map((skill, i) => (
-                            <div key={i} className="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-3 hover:border-indigo-300 transition-colors">
-                                <Cloud className="w-5 h-5 text-blue-500" />
+                            <div key={i} className="bg-white p-3 md:p-4 rounded-xl border border-slate-200 flex items-center gap-3 hover:border-indigo-300 transition-colors">
+                                <Cloud className="w-5 h-5 text-blue-500 shrink-0" />
                                 <span className="font-semibold text-slate-700 text-sm">{skill}</span>
                             </div>
                         ))}
                         {SKILLS_DATA.stack.map((skill, i) => (
-                            <div key={i} className="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-3 hover:border-amber-300 transition-colors">
-                                <Code className="w-5 h-5 text-amber-600" />
+                            <div key={i} className="bg-white p-3 md:p-4 rounded-xl border border-slate-200 flex items-center gap-3 hover:border-amber-300 transition-colors">
+                                <Code className="w-5 h-5 text-amber-600 shrink-0" />
                                 <span className="font-semibold text-slate-700 text-sm">{skill}</span>
                             </div>
                         ))}
