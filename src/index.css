@@ -10,3 +10,92 @@
     @apply antialiased;
   }
 }
+
+@media print {
+  @page {
+    margin: 0.5cm;
+    size: auto;
+  }
+
+  body {
+    background: white;
+  }
+
+  /* Force background colors to print for ALL elements */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    
+    /* Disable animations and force visibility */
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* CRITICAL: Override Framer Motion hiding elements */
+  [style*="opacity"] {
+    opacity: 1 !important;
+  }
+  [style*="transform"] {
+    transform: none !important;
+  }
+
+  /* Hide interactions */
+  nav a[download], 
+  button[aria-label="Scroll left"], 
+  button[aria-label="Scroll right"],
+  .group > div.flex.justify-center.gap-1.mt-2 /* The dots container */
+  {
+    display: none !important;
+  }
+
+  /* Carousel Container: Turn off flex/scroll, make it vertical stack */
+  .overflow-x-auto {
+    display: block !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* Carousel Item Wrapper */
+  .overflow-x-auto > div {
+    display: block !important;
+    min-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important; /* Spacing between items */
+    height: auto !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Ensure the BentoWidget inside expands */
+  .overflow-x-auto > div > div {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  
+  /* Ensure BentoGrid grid items break nicely */
+  .grid {
+    display: block !important; /* Flatten grids to stacks for safety? or keep grid? */
+    /* Keeping grid usually works in modern print, but let's be safe for content */
+  }
+  
+  /* Actually, for the "Mini Grid" Tech Stack, keep it grid but ensure spacing */
+  .grid.grid-cols-2 {
+     display: grid !important; 
+     grid-template-columns: 1fr 1fr !important;
+     gap: 1rem !important;
+     break-inside: avoid;
+  }
+
+  /* Ensure text colors are readable */
+  p, h1, h2, h3, h4, span, div {
+    color: black !important; 
+    text-shadow: none !important;
+  }
+  
+  /* Re-enable white text on specific backgrounds if needed, but black is safer for 'Resume' readability */
+  /* Exception: Items with dark backgrounds (like social cards) */
+  .bg-slate-900 *, .bg-blue-600 *, .from-blue-600 * {
+      color: white !important;
+  }
+}

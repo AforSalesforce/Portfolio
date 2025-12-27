@@ -85,13 +85,14 @@ const Portfolio = () => {
                         <span>Arabinda<span className="text-slate-400">.dev</span></span>
                     </div>
 
-                    <button
-                        onClick={() => window.print()}
+                    <a
+                        href="/resume.pdf"
+                        download="Arabinda_Ghosh_Resume.pdf"
                         className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all hover:shadow-lg hover:-translate-y-0.5"
                     >
                         <Download size={16} />
                         <span className="hidden sm:inline">Resume</span>
-                    </button>
+                    </a>
                 </div>
             </nav>
 
