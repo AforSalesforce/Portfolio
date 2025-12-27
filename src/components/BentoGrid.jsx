@@ -39,24 +39,24 @@ export const BentoWidget = ({
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.4 }}
             className={clsx(
-                "row-span-1 rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 md:p-6 dark:bg-black dark:border-white/[0.2] bg-white border border-slate-100 border-transparent justify-between flex flex-col space-y-4 hover:border-slate-200",
+                "row-span-1 rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input p-4 md:p-6 bg-white border border-slate-100 border-transparent justify-between flex flex-col space-y-4 hover:border-slate-200",
                 colSpan === 2 ? "md:col-span-2" : "md:col-span-1",
                 colSpan === 3 ? "md:col-span-3" : "",
                 className
             )}
             {...props}
         >
-            <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative">
+            <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl relative">
                 {/* Gradient background for visual interest if no header */}
                 {!header && <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 opacity-50 -z-10" />}
                 {header}
             </div>
             <div className="group-hover/bento:translate-x-2 transition duration-200 relative">
-                <div className="flex items-center gap-2 mb-2 font-sans font-bold text-slate-700 dark:text-slate-200">
+                <div className="flex items-center gap-2 mb-2 font-sans font-bold text-slate-700">
                     {icon}
                     {title}
                 </div>
-                <div className="font-sans font-normal text-slate-600 text-xs dark:text-slate-300">
+                <div className="font-sans font-normal text-slate-600 text-xs">
                     {description}
                 </div>
                 {href && (

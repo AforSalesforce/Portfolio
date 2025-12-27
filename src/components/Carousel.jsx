@@ -17,14 +17,14 @@ export const Carousel = ({ children, className }) => {
             {/* Scroll Buttons */}
             <button
                 onClick={() => scroll('left')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/80 backdrop-blur-md p-3 rounded-full shadow-lg border border-slate-100 text-slate-700 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 disabled:opacity-0 focus:opacity-100"
+                className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/80 backdrop-blur-md p-3 rounded-full shadow-lg border border-slate-100 text-slate-700 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 disabled:opacity-0 focus:opacity-100"
                 aria-label="Scroll left"
             >
                 <ChevronLeft size={24} />
             </button>
             <button
                 onClick={() => scroll('right')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/80 backdrop-blur-md p-3 rounded-full shadow-lg border border-slate-100 text-slate-700 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 disabled:opacity-0 focus:opacity-100"
+                className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/80 backdrop-blur-md p-3 rounded-full shadow-lg border border-slate-100 text-slate-700 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 disabled:opacity-0 focus:opacity-100"
                 aria-label="Scroll right"
             >
                 <ChevronRight size={24} />
@@ -33,11 +33,11 @@ export const Carousel = ({ children, className }) => {
             {/* Scroll Container */}
             <div
                 ref={scrollRef}
-                className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide px-2"
+                className="flex gap-4 md:gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide px-4"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 {React.Children.map(children, (child) => (
-                    <div className="min-w-[85vw] md:min-w-[450px] lg:min-w-[500px] snap-center flex-shrink-0 h-full">
+                    <div className="w-[85vw] md:w-[450px] lg:w-[500px] snap-start flex-shrink-0 h-full">
                         {child}
                     </div>
                 ))}
